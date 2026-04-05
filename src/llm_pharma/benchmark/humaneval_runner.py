@@ -119,12 +119,11 @@ def generate_completions(
                 # steering during decode has zero effect (arxiv:2603.16335).
                 # Behavioral commitments crystallize during prefill and propagate
                 # through DeltaNet recurrent state. So we steer on prompt tokens
-                # only: min_token_index=0, max_token_index=input_len.
+                # only using token_indices=slice(0, input_len).
                 with steering_vector.apply(
                     model,
                     multiplier=multiplier,
-                    min_token_index=0,
-                    max_token_index=input_len,
+                    token_indices=slice(0, input_len),
                 ):
                     output_ids = model.generate(**gen_kwargs)
             else:
