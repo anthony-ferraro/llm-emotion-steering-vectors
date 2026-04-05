@@ -230,8 +230,9 @@ VAL_PAIRS = 20
 
 # --- Steering ---
 # Calibrated: vectors are ~30-40% of residual stream norm already.
-# 1.0 produces gibberish. Sweep small values to find the sweet spot.
-DEFAULT_MULTIPLIERS = [0.05, 0.1, 0.2]
+# 1.0 produces degenerate output. 0.5 starts degrading. Sweet spot is 0.05-0.2.
+# Sanity check confirmed coherent output with behavioral changes at 0.1-0.2.
+DEFAULT_MULTIPLIERS = [0.1]
 
 # --- Cocktails ---
 @dataclass
