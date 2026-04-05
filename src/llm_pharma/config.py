@@ -229,7 +229,9 @@ TRAIN_PAIRS = 60
 VAL_PAIRS = 20
 
 # --- Steering ---
-DEFAULT_MULTIPLIERS = [1.0]
+# Calibrated: vectors are ~30-40% of residual stream norm already.
+# 1.0 produces gibberish. Sweep small values to find the sweet spot.
+DEFAULT_MULTIPLIERS = [0.05, 0.1, 0.2]
 
 # --- Cocktails ---
 @dataclass
