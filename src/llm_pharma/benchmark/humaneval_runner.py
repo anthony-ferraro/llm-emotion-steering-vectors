@@ -123,6 +123,7 @@ def generate_completions(
                 with steering_vector.apply(
                     model,
                     multiplier=multiplier,
+                    min_token_index=None,
                     token_indices=slice(0, input_len),
                 ):
                     output_ids = model.generate(**gen_kwargs)
