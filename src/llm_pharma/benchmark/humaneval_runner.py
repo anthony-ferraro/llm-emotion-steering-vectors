@@ -42,6 +42,15 @@ def _extract_completion(generated_text: str, prompt_text: str) -> str:
         if idx != -1:
             completion = completion[:idx]
 
+    # Strip thinking tokens and markdown fences from Qwen3.5 output
+    # The model often emits code, then </think>, then repeats code in markdown
+    if "</think>" in completion:
+        completion = completion[:completion.index("</think>")]
+    if "```python" in completion:
+        completion = completion[:completion.index("```python")]
+    if "```" in completion:
+        completion = completion[:completion.index("```")]
+
     return completion
 
 
