@@ -36,9 +36,8 @@ def load_model_and_tokenizer(model_id: str = MODEL_ID):
 
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        torch_dtype=dtype,
+        dtype=dtype,
         device_map="auto",
-        attn_implementation="flash_attention_2",
     )
     model.eval()
 
