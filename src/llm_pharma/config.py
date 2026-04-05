@@ -229,7 +229,7 @@ TRAIN_PAIRS = 60
 VAL_PAIRS = 20
 
 # --- Steering ---
-DEFAULT_MULTIPLIERS = [-1.0, -0.5, 0.5, 1.0, 1.5, 2.0]
+DEFAULT_MULTIPLIERS = [1.0]
 
 # --- Cocktails ---
 @dataclass
