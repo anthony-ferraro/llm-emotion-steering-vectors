@@ -285,7 +285,7 @@ COCKTAILS: list[Cocktail] = [
     ),
 ]
 
-COCKTAIL_MULTIPLIERS = [0.5, 1.0, 1.5]
+COCKTAIL_MULTIPLIERS = [0.1]
 
 # --- Benchmark ---
 HUMANEVAL_TEMPERATURE = 0.2
